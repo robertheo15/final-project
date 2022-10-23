@@ -38,5 +38,5 @@ go get golang.org/x/crypto
 go run main.go
 ```
 
-### Swagger :
-[Link](http://localhost:8080/swagger/index.html)
+### Postman :
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/11938940-242125c8-eb37-4912-bfa8-7d3ee4fa12a2?action=collection%2Ffork&collection-url=entityId%3D11938940-242125c8-eb37-4912-bfa8-7d3ee4fa12a2%26entityType%3Dcollection%26workspaceId%3D5aa43bc4-5bdd-48be-831b-433fc8e78e39)
