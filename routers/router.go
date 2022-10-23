@@ -14,6 +14,7 @@ func StartApp() *gin.Engine {
 	user := controller.NewUserController(db)
 	social := controller.NewSocialController(db)
 	photo := controller.NewPhotoController(db)
+	comment := controller.NewCommentController(db)
 
 	userGroup := router.Group("/users")
 	{
@@ -37,6 +38,14 @@ func StartApp() *gin.Engine {
 		photoGroup.POST("/", middleware.Auth(), photo.CreatePhoto)
 		photoGroup.PUT("/:photoId", middleware.Auth(), photo.UpdatePhoto)
 		photoGroup.DELETE("/:socialMediaId", middleware.Auth(), photo.DeletePhoto)
+	}
+
+	commentGroup := router.Group("/comments")
+	{
+		commentGroup.GET("/", middleware.Auth(), comment.FindAllComment)
+		commentGroup.POST("/", middleware.Auth(), comment.CreateComment)
+		commentGroup.PUT("/:commentId", middleware.Auth(), comment.UpdateComment)
+		commentGroup.DELETE("/:commentId", middleware.Auth(), comment.DeleteComment)
 	}
 
 	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
