@@ -1,7 +1,7 @@
 package database
 
 import (
-	"final-project/user/entity/model"
+	"final-project/entity"
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -31,7 +31,7 @@ func ConnectDB() *gorm.DB {
 		panic(err.Error())
 	}
 
-	err := db.AutoMigrate(model.User{})
+	err := db.AutoMigrate(entity.User{})
 	if err != nil {
 		panic(err.Error())
 	}

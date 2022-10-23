@@ -1,7 +1,7 @@
 package main
 
 import (
-	"final-project/common/routers"
+	"final-project/routers"
 )
 
 // @title Go + Gin Todo API
