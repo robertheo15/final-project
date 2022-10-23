@@ -31,7 +31,7 @@ func ConnectDB() *gorm.DB {
 		panic(err.Error())
 	}
 
-	err := db.AutoMigrate(entity.User{})
+	err := db.AutoMigrate(entity.User{}, entity.Social{}, entity.Photo{})
 	if err != nil {
 		panic(err.Error())
 	}
